@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic OCR | Qudus Abolade</title>
+    <meta name="description" content="Detailed information about the Arabic OCR project at Curacel by Qudus Abolade">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#work-experience"><i class="fas fa-arrow-left"></i> Back to Work Experience</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">Arabic OCR Vision System</h1>
+                <div class="project-company">
+                    <span class="company-name">Curacel</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>The Arabic OCR Vision System is an advanced optical character recognition solution specifically engineered to accurately transcribe Arabic text from both handwritten and printed documents. The system leverages state-of-the-art vision-language models to overcome the unique challenges of Arabic script recognition, including its cursive nature, contextual character shapes, and diacritical marks.</p>
+                        <p>As the sole developer of this project, I created a complete pipeline from data preparation to model deployment, focusing on accuracy and robustness for real-world applications. The system serves as a critical tool for digitizing Arabic documents, enabling searchable archives, and automating text extraction for various industries including healthcare, legal, and administrative sectors.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>Handling Arabic Script Complexity</h3>
+                            <p>Arabic script presents unique challenges for OCR systems due to its right-to-left orientation, contextual character shapes, and connected writing style.</p>
+                            <p><strong>Solution:</strong> I implemented a specialized data augmentation pipeline using advanced image transformations that preserved the integrity of Arabic characters while enhancing model generalization. This included careful application of rotations, shears, and contrast adjustments that maintained text readability while simulating real-world document variations.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Model Selection and Fine-tuning</h3>
+                            <p>Finding an appropriate base model capable of understanding the nuances of Arabic script required extensive research and experimentation.</p>
+                            <p><strong>Solution:</strong> I experimented with several convolutional neural network (CNN) architectures and also fine-tuned GPT models for OCR tasks. After thorough evaluation, I selected PaliGemma, a powerful vision-language model, and developed a custom fine-tuning approach that balanced computational efficiency with performance. By creating a comprehensive training dataset with paired image-text samples, I was able to achieve high transcription accuracy across diverse document types, including handwritten medical records with technical terminology.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Deployment and Accessibility</h3>
+                            <p>Creating a system accessible to end-users without specialized technical knowledge was crucial.</p>
+                            <p><strong>Solution:</strong> I developed a RESTful API with FastAPI that allows for easy integration with existing document management systems. The implementation includes robust error handling, image preprocessing to handle various input qualities, and optimized inference for responsive performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Results & Impact</h2>
+                        <p>The Arabic OCR Vision System demonstrates significant capabilities in Arabic text recognition:</p>
+                        <ul class="results-list">
+                            <li>Achieves over 90% character-level accuracy on diverse Arabic document types</li>
+                            <li>Successfully processes both handwritten and printed text with a single model</li>
+                            <li>Maintains high performance across medical terminology, which is particularly challenging due to specialized vocabulary</li>
+                            <li>Provides a scalable API solution that can be integrated into existing document workflows</li>
+                            <li>Significantly reduces manual transcription time from hours to seconds for complex documents</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>Developing this Arabic OCR system deepened my expertise in several technical areas:</p>
+                        <ul class="results-list">
+                            <li>Fine-tuning multimodal vision-language models and large language models (such as GPT) for specialized domains</li>
+                            <li>Evaluating and adapting CNN architectures for OCR tasks</li>
+                            <li>Creating effective data augmentation strategies for preserving text integrity while enhancing model robustness</li>
+                            <li>Implementing production-ready APIs for machine learning models</li>
+                            <li>Building preprocessing pipelines that handle real-world document variability</li>
+                            <li>Optimizing model performance for resource-efficient inference</li>
+                        </ul>
+                        <p>The project also highlighted the importance of domain-specific understanding when developing OCR solutions, particularly for languages with complex writing systems like Arabic, where context and character connections significantly impact recognition accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>PaliGemma</span>
+                            <span>GPT</span>
+                            <span>CNN</span>
+                            <span>Python</span>
+                            <span>Computer Vision</span>
+                            <span>OCR</span>
+                            <span>FastAPI</span>
+                            <span>PyTorch</span>
+                            <span>Arabic NLP</span>
+                            <span>Data Augmentation</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>AI Engineer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Duration</h3>
+                        <p>Ongoing (Started Sept 2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="../index.html#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

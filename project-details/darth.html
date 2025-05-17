@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.A.R.T.H - Digital Assistant | Qudus Abolade</title>
+    <meta name="description" content="D.A.R.T.H is an intelligent digital assistant designed to streamline technical tasks, featuring article generation, code documentation, bug fixing, and document assistance capabilities.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        /* Project detail specific styles */
+        .project-hero {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Darth.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tags span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .project-details {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            font-size: 1.25rem;
+        }
+        
+        .key-features {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-project.prev {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Qudus<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title" data-aos="fade-up">D.A.R.T.H - Digital Assistant</h1>
+            <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+                <span>AI</span>
+                <span>NLP</span>
+                <span>Python</span>
+                <span>Streamlit</span>
+                <span>OpenAI API</span>
+            </div>
+            <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/reedington/QUFIK_TUNGA.git" target="_blank" class="btn primary-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Project Overview</h2>
+                <p>D.A.R.T.H (Digital Assistant for Resourceful Technical Help) is a comprehensive AI-powered tool developed for the Tunga AI Hackathon. This intelligent assistant streamlines various technical tasks, enhancing productivity and efficiency for developers and technical professionals.</p>
+                <p>The project integrates several powerful features including article generation with translation capabilities, code documentation generation, bug detection and correction, and document assistance with text-to-speech functionality.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Features</h2>
+                <div class="key-features">
+                    <ul class="features-list">
+                        <li><strong>Article Generation</strong>: Creates technical articles in multiple languages with translation capabilities and text-to-speech conversion.</li>
+                        <li><strong>Code Documentation Generator</strong>: Simplifies the process of creating comprehensive code documentation for various programming languages.</li>
+                        <li><strong>Bug Detection & Correction</strong>: Identifies and fixes bugs in submitted code, improving code quality and reducing debugging time.</li>
+                        <li><strong>Document Assistant</strong>: Assists with uploaded documents, providing detailed answers and synthesizing responses into speech.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Technologies Used</h2>
+                <div class="technologies">
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-stream"></i>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-brain"></i>
+                        <span>OpenAI API</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Azure Services</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-comment-alt"></i>
+                        <span>NLP</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Speech Synthesis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Development Process</h2>
+                <p>This project was developed as part of the Tunga AI Hackathon by Team QUFIK, consisting of just two members. We successfully made it to the finals, demonstrating the effectiveness and innovation of our solution.</p>
+                <p>The development process involved:</p>
+                <ul>
+                    <li>Designing an intuitive user interface with Streamlit</li>
+                    <li>Implementing core functionalities leveraging OpenAI's GPT-4</li>
+                    <li>Integrating Azure services for enhanced capabilities</li>
+                    <li>Optimizing performance for speed and accuracy</li>
+                    <li>Conducting extensive testing to ensure reliability</li>
+                </ul>
+
+                <p>Initially, we implemented DeepSeeker (an open-source model) but later integrated OpenAI's GPT-4 to improve performance, processing speed, and accuracy. The application features a clean, intuitive interface that allows users to easily access its diverse capabilities through dedicated tabs for each functionality.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Results & Impact</h2>
+                <p>D.A.R.T.H successfully addresses several key challenges faced by developers and technical professionals:</p>
+                <ul>
+                    <li>Reduces time spent on documentation by automating code documentation generation</li>
+                    <li>Enhances productivity through quick bug detection and correction</li>
+                    <li>Facilitates knowledge sharing with multilingual article generation</li>
+                    <li>Improves accessibility with text-to-speech capabilities</li>
+                </ul>
+                <p>The project was recognized as a finalist in the Tunga AI Hackathon, validating its innovative approach and practical utility.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Takeaways</h2>
+                <ul>
+                    <li>Integration of multiple AI services to create a comprehensive tool</li>
+                    <li>Balancing performance with functionality in AI applications</li>
+                    <li>Designing intuitive user interfaces for complex AI tools</li>
+                    <li>Optimizing resource usage for efficient application operation</li>
+                    <li>Collaborative development in a hackathon environment</li>
+                </ul>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Future Enhancements</h2>
+                <ul>
+                    <li>Expanding language support for article generation</li>
+                    <li>Adding more programming languages for code documentation and bug fixing</li>
+                    <li>Implementing a chat interface for more intuitive interaction</li>
+                    <li>Developing offline capabilities for core functionalities</li>
+                    <li>Creating mobile applications for on-the-go access</li>
+                </ul>
+            </div>
+
+            <div class="project-navigation">
+                <a href="neural-style-transfer.html" class="nav-project prev">
+                    <span>Previous Project</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="thesispen-ai.html" class="nav-project next">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        // Check for saved theme preference or use preferred color scheme
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Set initial theme
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Toggle theme
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            let theme = 'light';
+            let icon = 'fa-moon';
+            
+            if (body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                icon = 'fa-sun';
+            }
+            
+            localStorage.setItem('theme', theme);
+            this.querySelector('i').className = `fas ${icon}`;
+        });
+    </script>
+</body>
+</html> 

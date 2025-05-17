@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Time-Off Automation | Qudus Abolade</title>
+    <meta name="description" content="An automated system for managing employee time-off requests, streamlining approvals, and ensuring policy compliance.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        /* Project detail specific styles */
+        .project-hero {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/time-off-automation.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tags span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .project-details {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            font-size: 1.25rem;
+        }
+        
+        .key-features {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-project.prev {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Qudus<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title" data-aos="fade-up">Employee Time-Off Automation</h1>
+            <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+                <span>Workflow Automation</span>
+                <span>Low-Code</span>
+                <span>HR Solutions</span>
+                <span>Process Optimization</span>
+            </div>
+            <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="#project-details" class="btn secondary-btn">
+                    <i class="fas fa-arrow-down"></i> See Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" class="project-details">
+        <div class="container">
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Project Overview</h2>
+                <p>The Employee Time-Off Automation system was designed to replace a cumbersome, manual process for requesting, approving, and tracking employee time off. The previous paper-based system was inefficient, error-prone, and created unnecessary administrative burden for the HR team.</p>
+                <p>This automation solution streamlines the entire time-off management workflow, from request submission to approval, calendar integration, and reporting. It ensures policy compliance, provides real-time visibility into team availability, and significantly reduces administrative overhead.</p>
+            </div>
+
+            <div class="image-gallery" data-aos="fade-up">
+                <div class="gallery-image">
+                    <img src="../images/time-off-automation.png" alt="Employee Time-Off Automation System">
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Technologies Used</h2>
+                <div class="technologies">
+                    <div class="tech-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Zapier</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-table"></i>
+                        <span>Google Sheets</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Google Calendar</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Integration</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-code"></i>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <p>The solution leverages readily available tools within the organization's existing technology stack, combined with custom automation workflows to create a seamless experience for all stakeholders, from employees to managers and HR administrators.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Features</h2>
+                <div class="key-features">
+                    <ul class="features-list">
+                        <li>Digital time-off request submission and approval workflow</li>
+                        <li>Automatic policy validation (available balance, blackout dates, etc.)</li>
+                        <li>Manager notification and one-click approval/denial</li>
+                        <li>Calendar integration for team availability visibility</li>
+                        <li>Real-time balance tracking and calculations</li>
+                        <li>Comprehensive reporting dashboard for HR</li>
+                        <li>Employee self-service for request status and balance checking</li>
+                        <li>Integration with payroll systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Implementation Details</h2>
+                <h3>Workflow Design</h3>
+                <p>The implementation followed a user-centered design approach, focusing on creating a frictionless experience for employees while ensuring managers and HR have the necessary controls and visibility. The workflow was carefully mapped to accommodate various time-off types, each with its own approval rules and balance calculations.</p>
+                
+                <h3>Policy Enforcement</h3>
+                <p>Custom validation rules were implemented to automatically enforce company policies, including checking accrued balances, blackout dates, team coverage requirements, and other business rules that previously required manual verification.</p>
+                
+                <h3>Integration Architecture</h3>
+                <p>Rather than building a standalone system, the solution integrates with the company's existing productivity and HR tools. This approach minimized training requirements and ensured high adoption rates while maintaining data consistency across systems.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Results & Impact</h2>
+                <p>The implementation of the Employee Time-Off Automation system delivered substantial improvements:</p>
+                <ul>
+                    <li>Reduced request processing time from days to minutes</li>
+                    <li>Eliminated paper forms and manual record-keeping</li>
+                    <li>Decreased HR administrative time spent on leave management by 85%</li>
+                    <li>Improved accuracy of time-off records and balance calculations</li>
+                    <li>Enhanced visibility of team availability for managers</li>
+                    <li>Ensured consistent policy application across all departments</li>
+                    <li>Increased employee satisfaction with the time-off request process</li>
+                </ul>
+                <p>These improvements not only increased operational efficiency but also contributed to better workforce planning and employee experience.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Challenges & Learning</h2>
+                <p>Several challenges were encountered and overcome during this project:</p>
+                <ul>
+                    <li>Accommodating complex policy rules that varied by employee type, tenure, and department</li>
+                    <li>Ensuring seamless handling of edge cases like cancellations, partial approvals, and retroactive requests</li>
+                    <li>Managing change resistance from stakeholders accustomed to the manual process</li>
+                    <li>Balancing automation with necessary human oversight for certain situations</li>
+                </ul>
+                <p>This project reinforced the importance of stakeholder engagement throughout the development process and demonstrated the significant impact that even relatively simple automation can have on organizational efficiency when applied to high-frequency processes.</p>
+            </div>
+
+            <div class="project-navigation">
+                <a href="flower-classifier.html" class="nav-project prev">
+                    <span>Previous Project</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="realestatepro-automation.html" class="nav-project next">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

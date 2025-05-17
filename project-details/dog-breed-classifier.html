@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Classifier | Qudus Abolade</title>
+    <meta name="description" content="An AI-powered image classification system that can identify dog breeds from photos with high accuracy.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        /* Project detail specific styles */
+        .project-hero {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/dogs.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tags span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .project-details {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            font-size: 1.25rem;
+        }
+        
+        .key-features {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-project.prev {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Qudus<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title" data-aos="fade-up">Dog Breed Classifier</h1>
+            <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+                <span>PyTorch</span>
+                <span>CNN</span>
+                <span>Computer Vision</span>
+                <span>Deep Learning</span>
+            </div>
+            <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/qudus4l/Image-Classifier-to-Identify-Dog-Breeds.git" target="_blank" class="btn primary-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#project-details" class="btn secondary-btn">
+                    <i class="fas fa-arrow-down"></i> See Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" class="project-details">
+        <div class="container">
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Project Overview</h2>
+                <p>The Dog Breed Classifier is an image classification project that leverages deep learning to identify different breeds of dogs from images. Using convolutional neural networks (CNNs), this classifier has been trained to recognize 133 different dog breeds with high accuracy.</p>
+                <p>The project demonstrates the power of transfer learning by utilizing pre-trained models that have been fine-tuned on a large dataset of dog images. This approach allows the classifier to achieve impressive results even with a relatively small amount of training data for each breed.</p>
+            </div>
+
+            <div class="image-gallery" data-aos="fade-up">
+                <div class="gallery-image">
+                    <img src="../images/dogs.png" alt="Dog Breed Classifier">
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Technologies Used</h2>
+                <div class="technologies">
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-fire"></i>
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-brain"></i>
+                        <span>CNN</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Jupyter Notebook</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-camera"></i>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+                <p>The project primarily uses PyTorch as the deep learning framework, leveraging its powerful capabilities for building and training neural networks. The model architecture includes pre-trained networks like VGG, Alexnet, and DenseNet for transfer learning.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Features</h2>
+                <div class="key-features">
+                    <ul class="features-list">
+                        <li>Recognition of 133 different dog breeds with high accuracy</li>
+                        <li>Human face detection - can identify if a human is in the image</li>
+                        <li>Breed resemblance detection - tells humans which dog breed they most resemble</li>
+                        <li>Multiple pre-trained model options (VGG, Alexnet, DenseNet)</li>
+                        <li>Robust image preprocessing pipeline for consistent results</li>
+                        <li>Custom CNN architecture with transfer learning for optimal performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Implementation Details</h2>
+                <h3>Data Preprocessing</h3>
+                <p>Images are resized, normalized, and augmented to ensure consistent input to the neural network. Data augmentation techniques like random rotations, flips, and color jittering were applied to increase the diversity of the training set.</p>
+                
+                <h3>Model Architecture</h3>
+                <p>The classifier uses transfer learning with pre-trained CNN models (VGG, Alexnet, DenseNet) as a base, with custom classification layers added on top. These pre-trained networks have already learned to extract meaningful features from images, which are then fine-tuned for the specific task of dog breed classification.</p>
+                
+                <h3>Training Process</h3>
+                <p>The model was trained using stochastic gradient descent with a learning rate scheduler to ensure optimal convergence. Early stopping was implemented to prevent overfitting, and the best-performing model was saved for inference.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Results & Impact</h2>
+                <p>The final model achieves over 85% accuracy on the test dataset, demonstrating its effectiveness in distinguishing between various dog breeds. The classifier works well even with challenging images where the dog may be partially obscured or in unusual poses.</p>
+                <p>The project showcases practical applications of deep learning in image classification tasks and provides a foundation for more advanced computer vision projects.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Challenges & Learning</h2>
+                <p>Some of the main challenges encountered during this project included:</p>
+                <ul>
+                    <li>Handling class imbalance in the training dataset</li>
+                    <li>Fine-tuning hyperparameters for optimal performance</li>
+                    <li>Optimizing the model for both accuracy and inference speed</li>
+                    <li>Integrating the human face detection component seamlessly</li>
+                </ul>
+                <p>These challenges provided valuable learning opportunities in deep learning model optimization, transfer learning techniques, and computer vision best practices.</p>
+            </div>
+
+            <div class="project-navigation">
+                <a href="thesispen-ai.html" class="nav-project prev">
+                    <span>Previous Project</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="flower-classifier.html" class="nav-project next">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

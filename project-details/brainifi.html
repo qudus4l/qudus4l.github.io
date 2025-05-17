@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainiFi | Qudus Abolade</title>
+    <meta name="description" content="BrainiFi - AI-powered study assistant that transforms PDF documents into interactive learning experiences">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">BrainiFi</h1>
+                <div class="project-company">
+                    <span class="company-name">Personal Project</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    <div class="project-image">
+                        <img src="../images/Brainify.png" alt="BrainiFi">
+                    </div>
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>BrainiFi is an AI-powered study assistant that transforms PDF study materials into interactive learning experiences. The platform leverages advanced AI to generate intelligent questions from uploaded documents, helping students study more efficiently through active recall and spaced repetition techniques.</p>
+                        <p>As the lead developer on this project, I designed and implemented both the frontend and backend components, creating a seamless user experience that makes studying more engaging and effective.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>PDF Document Processing</h3>
+                            <p>Extracting and processing text from various PDF formats with different layouts, fonts, and structures presented significant challenges.</p>
+                            <p><strong>Solution:</strong> I implemented a robust PDF processing pipeline using PyPDF2 and custom text extraction algorithms that handle various document structures, preserve formatting where relevant, and organize content for effective question generation.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Intelligent Question Generation</h3>
+                            <p>Creating meaningful, context-aware questions that test understanding rather than simple recall required sophisticated NLP approaches.</p>
+                            <p><strong>Solution:</strong> I developed a question generation system using Google's Generative AI that analyzes document structure, identifies key concepts, and generates diverse question types (multiple choice, short answer, fill-in-the-blank) with appropriate difficulty levels based on the content's complexity.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Real-time Answer Validation</h3>
+                            <p>Providing immediate, helpful feedback on free-form answers while accommodating various correct phrasings was particularly challenging.</p>
+                            <p><strong>Solution:</strong> I implemented a semantic matching algorithm that evaluates answer correctness beyond simple string matching, providing nuanced feedback that helps users understand why their answers were correct or incorrect.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Features & Functionality</h2>
+                        <ul class="results-list">
+                            <li><strong>PDF Document Analysis:</strong> Upload and process PDF study materials with automatic content extraction and organization</li>
+                            <li><strong>AI-Powered Question Generation:</strong> Automatically generate various question types to test understanding</li>
+                            <li><strong>Multiple Study Modes:</strong> Quick Review, Deep Study, Revision, and Test Prep options</li>
+                            <li><strong>Adaptive Learning:</strong> Questions adjust based on user performance and learning patterns</li>
+                            <li><strong>Progress Analytics:</strong> Detailed insights into learning progress with visual dashboards</li>
+                            <li><strong>Modern, Responsive UI:</strong> Built with React, TypeScript, and Tailwind CSS for an optimal experience across devices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>Developing BrainiFi expanded my expertise in several technical domains:</p>
+                        <ul class="results-list">
+                            <li>Building full-stack applications with React, TypeScript, and FastAPI</li>
+                            <li>Implementing advanced PDF processing techniques</li>
+                            <li>Designing and optimizing prompt engineering for generative AI applications</li>
+                            <li>Creating adaptive learning algorithms that respond to user performance</li>
+                            <li>Developing responsive, accessible user interfaces with Tailwind CSS and Framer Motion</li>
+                        </ul>
+                        <p>The project also reinforced the importance of user-centered design in educational technology, where the interface must be intuitive enough to avoid distracting from the learning process itself.</p>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>React 18</span>
+                            <span>TypeScript</span>
+                            <span>FastAPI</span>
+                            <span>Python</span>
+                            <span>Google Generative AI</span>
+                            <span>PyPDF2</span>
+                            <span>Tailwind CSS</span>
+                            <span>Framer Motion</span>
+                            <span>Vite</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Project Status</h3>
+                        <p>In Development</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Source Code</h3>
+                        <p><a href="https://github.com/qudus4l/BrainiFi.git" target="_blank">GitHub Repository <i class="fab fa-github"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>AI Engineer specializing in intelligent systems that deliver measurable business impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Qudus Abolade.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

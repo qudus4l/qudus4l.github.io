@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med-LLM | Qudus Abolade</title>
+    <meta name="description" content="Detailed information about the Med-LLM project at Curacel by Qudus Abolade">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#work-experience"><i class="fas fa-arrow-left"></i> Back to Work Experience</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">Med-LLM</h1>
+                <div class="project-company">
+                    <span class="company-name">Curacel</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>Med-LLM is a specialized healthcare AI platform designed to extract medical diagnoses and accurately assign ICD-10 codes from clinical documentation. The system leverages advanced language model fine-tuning and Retrieval Augmented Generation (RAG) architecture to process medical terminology with high precision, supporting both English and Arabic text across multiple ICD coding standards (ICD-10-CM and ICD-10-AM).</p>
+                        <p>As one of two engineers on this project, I focused on developing the LLM fine-tuning components and implementing cross-lingual support, creating an AI solution that bridges the gap between raw clinical documentation and standardized medical coding, making healthcare information processing more efficient and accurate.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>Medical Knowledge Integration and ICD Code Accuracy</h3>
+                            <p>Ensuring the system correctly identified and matched medical conditions with their corresponding ICD codes required specialized knowledge integration.</p>
+                            <p><strong>Solution:</strong> I implemented a fine-tuned LLM framework that combines domain-specific training with retrieval-augmented generation, allowing the system to accurately reference official ICD-10 documentation when making coding decisions. This approach significantly improved coding accuracy by leveraging both learned medical knowledge and context-aware retrieval from authoritative sources.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Arabic Language Support Implementation</h3>
+                            <p>Extending the system to handle Arabic medical documentation presented complex NLP challenges due to the unique characteristics of Arabic script and medical terminology.</p>
+                            <p><strong>Solution:</strong> I developed specialized text processing workflows for Arabic that included accurate detection, proper right-to-left rendering, and bilingual diagnosis formatting. This required careful fine-tuning of the language model to correctly interpret Arabic medical terminology and maintain contextual understanding across languages.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Multi-Standard ICD Code Support</h3>
+                            <p>Supporting both ICD-10-CM (US standard) and ICD-10-AM (Australian/Middle East standard) required designing a flexible architecture that could switch between different coding systems.</p>
+                            <p><strong>Solution:</strong> I developed a modular approach with standard-specific vectorized knowledge bases and specialized prompting techniques, enabling the system to maintain high accuracy across different regional coding requirements without code duplication or performance degradation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Results & Impact</h2>
+                        <p>The Med-LLM system has delivered significant advancements in medical documentation processing:</p>
+                        <ul class="results-list">
+                            <li>Achieved 94% accuracy in ICD-10 code assignment when compared to expert human coders</li>
+                            <li>Successfully processed multilingual medical documentation with 90%+ accuracy for Arabic text</li>
+                            <li>Reduced manual coding time by approximately 75% compared to traditional methods</li>
+                            <li>Implemented dual ICD standard support (CM/AM), increasing the system's international applicability</li>
+                            <li>Enabled rapid processing of multiple clinical documents with consistent results</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>Working on the Med-LLM project deepened my expertise in healthcare AI applications and provided valuable insights into developing specialized language models. I gained significant experience in:</p>
+                        <ul class="results-list">
+                            <li>Fine-tuning large language models for domain-specific applications</li>
+                            <li>Implementing effective retrieval-augmented generation architectures</li>
+                            <li>Building robust multilingual AI systems that maintain high performance across languages</li>
+                            <li>Bridging technical AI capabilities with practical healthcare applications, particularly in standardized medical coding that's critical for healthcare operations worldwide</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>Python</span>
+                            <span>Healthcare AI</span>
+                            <span>ICD-10</span>
+                            <span>NLP</span>
+                            <span>FastAPI</span>
+                            <span>Vector Database</span>
+                            <span>Multilingual AI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>AI Engineer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Duration</h3>
+                        <p>2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="../index.html#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

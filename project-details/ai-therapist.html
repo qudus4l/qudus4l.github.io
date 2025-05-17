@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Therapist | Qudus Abolade</title>
+    <meta name="description" content="AI Therapist - Real-time conversational AI assistant using WebRTC and OpenAI's API for mental health support">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">AI Therapist</h1>
+                <div class="project-company">
+                    <span class="company-name">Personal Project</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    <div class="project-image">
+                        <img src="../images/ai-therapist.png" alt="AI Therapist">
+                    </div>
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>AI Therapist is a real-time conversational assistant that enables natural speech-to-speech interactions for mental health support. Using WebRTC technology and OpenAI's Realtime API, the application creates a seamless, voice-based interface that feels like talking to a supportive human therapist.</p>
+                        <p>The system is designed to provide accessible mental health resources through natural conversation, creating a low-barrier entry point for those seeking emotional support or guidance. While not a replacement for professional therapy, it serves as a supplementary tool for mental wellness.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>Real-time Audio Processing</h3>
+                            <p>Implementing bidirectional audio streaming with minimal latency while maintaining high quality was a significant technical challenge.</p>
+                            <p><strong>Solution:</strong> I developed a WebRTC client using Python's aiortc library that establishes secure, low-latency connections with OpenAI's Realtime API. The implementation includes optimized audio configuration (48kHz sampling rate, mono channel) and efficient buffer management to minimize latency while preserving audio quality.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Secure Authentication</h3>
+                            <p>Ensuring secure access to the API while maintaining user privacy required careful implementation.</p>
+                            <p><strong>Solution:</strong> I implemented an ephemeral token-based authentication system that securely manages API credentials and user sessions. The system uses environment variables for API key storage and establishes encrypted connections for all data transmission.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Conversation Context Management</h3>
+                            <p>Maintaining coherent, contextually-aware conversations across a therapy session presented unique challenges.</p>
+                            <p><strong>Solution:</strong> I designed a data channel system that manages conversation state, tracks emotional context, and ensures continuity throughout the interaction. This approach allows the AI to remember previous statements and respond appropriately to evolving emotional needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Features & Functionality</h2>
+                        <ul class="results-list">
+                            <li><strong>Real-time Voice Interaction:</strong> Natural speech-to-speech conversation with minimal latency</li>
+                            <li><strong>Secure Communication:</strong> End-to-end encryption for all user interactions</li>
+                            <li><strong>Contextual Awareness:</strong> Maintains conversation history for coherent, meaningful exchanges</li>
+                            <li><strong>Multi-modal Support:</strong> Handles both text and speech inputs/outputs</li>
+                            <li><strong>Emotional Intelligence:</strong> Responds appropriately to emotional cues in conversation</li>
+                            <li><strong>User Authentication:</strong> Secure login system with session management</li>
+                            <li><strong>Conversation History:</strong> Option to save and review past conversations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>Developing the AI Therapist project provided valuable insights into several advanced technical domains:</p>
+                        <ul class="results-list">
+                            <li>Implementing WebRTC for real-time audio communication</li>
+                            <li>Working with OpenAI's Realtime API for speech processing</li>
+                            <li>Building secure authentication systems for sensitive applications</li>
+                            <li>Optimizing audio processing for conversational AI</li>
+                            <li>Designing user interfaces for voice-first applications</li>
+                            <li>Creating systems that handle emotionally sensitive content appropriately</li>
+                        </ul>
+                        <p>This project also deepened my understanding of the intersection between technology and mental health, highlighting both the opportunities and ethical considerations in this space.</p>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>Python 3.11</span>
+                            <span>WebRTC</span>
+                            <span>aiortc</span>
+                            <span>OpenAI API</span>
+                            <span>FFmpeg</span>
+                            <span>HTML/CSS</span>
+                            <span>SQLite</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>Lead Developer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Project Status</h3>
+                        <p>In Development</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Source Code</h3>
+                        <p><a href="https://github.com/qudus4l/AI-Therapist.git" target="_blank">GitHub Repository <i class="fab fa-github"></i></a></p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Ethical Considerations</h3>
+                        <p>This project is developed with careful attention to mental health ethics, user privacy, and appropriate disclaimers about the limitations of AI in therapeutic contexts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>AI Engineer specializing in intelligent systems that deliver measurable business impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Qudus Abolade.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

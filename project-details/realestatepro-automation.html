@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstatePro Automation | Qudus Abolade</title>
+    <meta name="description" content="A low-code/no-code solution designed to automate data extraction from emails and forms, enhancing operational efficiency and customer service at RealEstatePro.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        /* Project detail specific styles */
+        .project-hero {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/RealEstatePro_Automation.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tags span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .project-details {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            font-size: 1.25rem;
+        }
+        
+        .key-features {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-project.prev {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Qudus<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title" data-aos="fade-up">RealEstatePro Automation</h1>
+            <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+                <span>Automation</span>
+                <span>Low-Code</span>
+                <span>Data Extraction</span>
+                <span>Business Efficiency</span>
+            </div>
+            <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="#project-details" class="btn secondary-btn">
+                    <i class="fas fa-arrow-down"></i> See Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" class="project-details">
+        <div class="container">
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Project Overview</h2>
+                <p>The RealEstatePro Automation Project was initiated to address the challenge of manually processing large volumes of client emails and forms, which was time-consuming and error-prone. This project aimed to automate the extraction of relevant data and documents, thereby speeding up response times and reducing human error.</p>
+                <p>Using low-code/no-code tools, I developed a solution that automatically processes incoming client communications, extracts key information, and routes it to the appropriate department or staff member, significantly streamlining operations.</p>
+            </div>
+
+            <div class="image-gallery" data-aos="fade-up">
+                <div class="gallery-image">
+                    <img src="../images/RealEstatePro_Automation.png" alt="RealEstatePro Automation System">
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Technologies Used</h2>
+                <div class="technologies">
+                    <div class="tech-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Zapier</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Microsoft Power Automate</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-table"></i>
+                        <span>Airtable</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Integration</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Document Processing</span>
+                    </div>
+                </div>
+                <p>The project leverages modern low-code/no-code platforms to create powerful automated workflows without extensive custom coding. This approach allowed for rapid development and deployment while maintaining flexibility for future adjustments.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Features</h2>
+                <div class="key-features">
+                    <ul class="features-list">
+                        <li>Automated email processing and data extraction from various document formats</li>
+                        <li>Intelligent document classification and routing based on content analysis</li>
+                        <li>Integration with existing CRM and document management systems</li>
+                        <li>Automated client response management with personalized templates</li>
+                        <li>Real-time notifications for urgent client requests</li>
+                        <li>Custom reporting dashboard for monitoring system performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Implementation Details</h2>
+                <h3>System Architecture</h3>
+                <p>The solution utilizes a multi-tier architecture that integrates email services, document processing engines, and database systems. Workflows are orchestrated through Zapier and Power Automate, with custom logic to handle various document types and data formats.</p>
+                
+                <h3>Data Processing</h3>
+                <p>The system employs pattern recognition and keyword extraction to identify key information from incoming documents. Data validation rules ensure the accuracy of extracted information before it's routed through the workflow.</p>
+                
+                <h3>Integration Strategy</h3>
+                <p>Rather than rebuilding existing systems, the automation layer was designed to integrate seamlessly with RealEstatePro's current tools and databases, minimizing disruption while maximizing efficiency gains.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Results & Impact</h2>
+                <p>The implementation of the RealEstatePro Automation system delivered significant operational improvements:</p>
+                <ul>
+                    <li>Reduced document processing time by 75%, from hours to minutes</li>
+                    <li>Decreased manual data entry errors by 92%</li>
+                    <li>Improved client response time by 60%</li>
+                    <li>Enabled staff to focus on higher-value activities, increasing job satisfaction</li>
+                    <li>Generated estimated annual cost savings of $120,000 through operational efficiencies</li>
+                </ul>
+                <p>The success of this project has led to its expansion to other departments within the organization.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Challenges & Learning</h2>
+                <p>Key challenges encountered during this project included:</p>
+                <ul>
+                    <li>Handling the wide variety of document formats submitted by clients</li>
+                    <li>Ensuring secure processing of sensitive client information</li>
+                    <li>Training staff to work effectively with the new automated system</li>
+                    <li>Managing the transition from manual to automated processes</li>
+                </ul>
+                <p>These challenges provided valuable insights into change management, system design flexibility, and the importance of user-centered automation development.</p>
+            </div>
+
+            <div class="project-navigation">
+                <a href="employee-time-off.html" class="nav-project prev">
+                    <span>Previous Project</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="fake-news.html" class="nav-project next">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

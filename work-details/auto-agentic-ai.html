@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Agentic AI | Qudus Abolade</title>
+    <meta name="description" content="Detailed information about the Auto Agentic AI project at Curacel by Qudus Abolade">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#work-experience"><i class="fas fa-arrow-left"></i> Back to Work Experience</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">Auto Agentic AI</h1>
+                <div class="project-company">
+                    <span class="company-name">Curacel</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>The Auto WhatsApp Insurance Chatbot is an advanced agentic AI system designed to streamline insurance processes through WhatsApp, making insurance services accessible and user-friendly. The system leverages large language models, LangChain, and tool calls (not just workflows) for document processing and to guide users through complex insurance journeys from inquiry to policy purchase and claims management.</p>
+                        <p>As the developer of this solution, I created an end-to-end system that bridges the gap between insurance complexity and consumer accessibility, enabling users to interact with insurance services through a familiar messaging platform without requiring specialized knowledge of insurance terminology or processes.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>Sequential Document Collection and Verification</h3>
+                            <p>Managing the complex process of collecting and verifying multiple vehicle images and documents presented significant challenges.</p>
+                            <p><strong>Solution:</strong> I implemented a sophisticated sequential image collection tool using LangChain tool calls with real-time validation, ensuring users successfully uploaded all required documentation while providing clear guidance at each step. The system includes automatic S3 storage integration and API validation to ensure document quality and completeness.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Maintaining Context Throughout Multi-Step Processes</h3>
+                            <p>Insurance journeys involve multi-step processes that require maintaining context across many interactions.</p>
+                            <p><strong>Solution:</strong> I designed a comprehensive user context management system that tracks user state, policy preferences, and interaction history, enabling the bot to seamlessly resume conversations and guide users through complex flows using tool calls, not just static workflows, even when sessions are interrupted.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Natural Language Understanding for Insurance Domain</h3>
+                            <p>Interpreting user intent in the specialized insurance domain required domain-specific NLP capabilities.</p>
+                            <p><strong>Solution:</strong> I integrated OpenAI's language models with custom LangChain tools for different insurance operations, creating a hybrid system capable of understanding insurance terminology, policy types, and user needs expressed in natural language, then routing to the appropriate service via tool calls.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Results & Impact</h2>
+                        <p>The Auto WhatsApp Insurance Chatbot has transformed how users interact with insurance services:</p>
+                        <ul class="results-list">
+                            <li>Reduced policy purchase time by 40% compared to traditional channels</li>
+                            <li>Successfully processed over 1,000 vehicle insurance policies with comprehensive documentation collection</li>
+                            <li>Streamlined claims processing by automating document collection and initial assessment</li>
+                            <li>Expanded insurance accessibility to users preferring conversational interfaces over traditional forms</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>Developing this system deepened my expertise in creating agentic AI systems for specialized business domains and provided valuable insights into designing seamless user experiences for complex multi-step processes. I gained extensive experience in:</p>
+                        <ul class="results-list">
+                            <li>LLM integration with business systems and tool calls using LangChain and OpenAI agents SDK</li>
+                            <li>Tool-based AI architecture design and implementation</li>
+                            <li>Conversation flow management for complex multi-step processes</li>
+                            <li>Secure document handling and processing for regulated industries</li>
+                            <li>Context management in conversational AI applications</li>
+                            <li>WhatsApp Business API integration with AI systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>OpenAI GPT</span>
+                            <span>LangChain (tool calls)</span>
+                            <span>WhatsApp Business API</span>
+                            <span>FastAPI</span>
+                            <span>AWS S3</span>
+                            <span>Document Processing</span>
+                            <span>Agentic AI</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>AI Engineer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Duration</h3>
+                        <p>Ongoing (Started Sept 2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="../index.html#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

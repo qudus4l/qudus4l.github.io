@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuntyPelz AI | Qudus Abolade</title>
+    <meta name="description" content="Detailed information about the AuntyPelz AI project at Curacel by Qudus Abolade">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#work-experience"><i class="fas fa-arrow-left"></i> Back to Work Experience</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">AuntyPelz AI</h1>
+                <div class="project-company">
+                    <span class="company-name">Curacel</span>
+                    <span class="project-date">2024</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    <div class="project-image">
+                        <img src="../images/auntypelz-ai.png" alt="AuntyPelz AI">
+                    </div>
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>The HR FAQ Chatbot, internally known as AuntyPelz AI, is an intelligent assistant developed to streamline Human Resources operations at Curacel. It leverages a Retrieval-Augmented Generation (RAG) system to provide employees with instant, accurate answers to HR-related questions, process leave day and HMO ID inquiries, and deliver Slack engagement analytics. The system integrates with Google Drive for document-based knowledge and Google Sheets for dynamic employee and analytics data, utilizing OpenAI's language models for natural language understanding and response generation.</p>
+                        <p>As the sole developer on this project, I designed and implemented an AI-powered solution that enhances employee experience by providing a centralized, accessible, and efficient channel for HR information and services. The goal was to reduce the manual workload on the People Operations team and empower employees with self-service capabilities.</p>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges & Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>Integrating Diverse and Dynamic Data Sources</h3>
+                            <p>The chatbot needed to access information from various sources including HR policy documents (PDFs on Google Drive), structured employee leave/HMO data (Google Sheets), and Slack analytics reports (Google Sheets). Ensuring data freshness and consistent retrieval was crucial.</p>
+                            <p><strong>Solution:</strong> I implemented a robust document loading and processing pipeline that converts these varied data types into a unified format suitable for a vector store (Chroma). This involved creating parsers for Google Drive files and Google Sheets, and a mechanism to periodically refresh the vector store to ensure the chatbot always has access to the latest information.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Ensuring Contextual Understanding and Accurate Responses</h3>
+                            <p>Providing relevant answers required the chatbot to understand the context of the conversation, including past interactions, and to accurately interpret different types of HR queries (e.g., policy questions, data lookups for leave, specific Slack analytics).</p>
+                            <p><strong>Solution:</strong> I worked on the design and implementation of the RAG chain using LangChain. This included setting up history-aware retrievers to maintain conversational context, and crafting detailed system prompts that guide the LLM in how to handle different query types, utilize the retrieved context, and adhere to specific communication protocols (e.g., for leave balance, HMO ID, Slack analytics reporting).</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Handling Specialized Queries and Data Presentation</h3>
+                            <p>The chatbot needed to not just answer general questions but also perform specific tasks like looking up an employee's leave balance, presenting their Slack engagement metrics in a user-friendly way (including benchmarks and leaderboard positions), and guiding new hires through onboarding processes.</p>
+                            <p><strong>Solution:</strong> I developed the logic within the RAG chain and prompt engineering to include protocols for these specialized queries. This involved ensuring the LLM could correctly parse requests, access the appropriate data (leave data, Slack analytics data passed in context), and format the output clearly. For the onboarding process, I implemented a comprehensive system that retrieves personalized onboarding checklists from Google Sheets, creates a customized conversation flow collecting the new employee's name, location, and team, then uses this information to recommend relevant Slack channels and connect them with nearby team members. The system presents an interactive onboarding checklist with progress tracking and integrates with Slack to allow HR personnel to manually trigger onboarding through a dedicated command.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Results & Impact</h2>
+                        <p>The HR FAQ Chatbot has significantly improved the efficiency of HR operations and employee satisfaction:</p>
+                        <ul class="results-list">
+                            <li>Achieved a 90% success rate in resolving common HR queries without human intervention, based on initial deployment feedback.</li>
+                            <li>Reduced the time taken for employees to receive answers to questions by an average of 80%.</li>
+                            <li>Enabled employees to access their Slack engagement metrics on-demand, fostering a data-aware culture.</li>
+                            <li>Freed up an estimated 10-15 hours per week for the People Operations team by automating responses to repetitive inquiries.</li>
+                            <li>Improved the onboarding process for new employees by providing a personalized checklist and connecting them with relevant Slack channels.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <p>This project provided extensive experience in developing and deploying practical AI solutions in a corporate environment:</p>
+                        <ul class="results-list">
+                            <li>Deepened my understanding of building and optimizing Retrieval-Augmented Generation (RAG) systems for domain-specific Q&A.</li>
+                            <li>Gained significant experience in integrating LLMs with diverse external data sources, including unstructured documents and structured spreadsheets via APIs (Google Drive, Google Sheets).</li>
+                            <li>Enhanced my skills in prompt engineering to guide LLM behavior for complex tasks, ensuring accuracy, appropriate tone, and adherence to specific operational protocols.</li>
+                            <li>Developed expertise in using LangChain for orchestrating complex LLM workflows, including history management and context injection.</li>
+                            <li>Acquired practical knowledge in building and deploying AI applications using FastAPI, including managing application lifecycle, background tasks, and API endpoint design.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>OpenAI GPT</span>
+                            <span>LangChain</span>
+                            <span>RAG</span>
+                            <span>ChromaDB</span>
+                            <span>FastAPI</span>
+                            <span>Google Drive API</span>
+                            <span>Google Sheets API</span>
+                            <span>Slack API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>AI Engineer</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Duration</h3>
+                        <p>Ongoing (Started Sept 2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="../index.html#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

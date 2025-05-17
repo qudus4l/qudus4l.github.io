@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Species Classifier | Qudus Abolade</title>
+    <meta name="description" content="An AI-powered image classification system that can identify different flower species with high accuracy.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        /* Project detail specific styles */
+        .project-hero {
+            min-height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Flowers.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tags span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .project-details {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .project-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .gallery-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tech-item i {
+            font-size: 1.25rem;
+        }
+        
+        .key-features {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-project {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-project.prev {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Qudus<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <h1 class="project-title" data-aos="fade-up">Flower Species Classifier</h1>
+            <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+                <span>TensorFlow</span>
+                <span>CNN</span>
+                <span>Transfer Learning</span>
+                <span>Computer Vision</span>
+            </div>
+            <div class="project-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/qudus4l/Flower-Species-Image-Classifier.git" target="_blank" class="btn primary-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#project-details" class="btn secondary-btn">
+                    <i class="fas fa-arrow-down"></i> See Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" class="project-details">
+        <div class="container">
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Project Overview</h2>
+                <p>The Flower Species Classifier is a deep learning application that accurately classifies images of flowers into their respective species. Leveraging the power of convolutional neural networks (CNNs) and transfer learning, this project demonstrates how to build a highly accurate image classifier with limited training data.</p>
+                <p>This application can recognize 102 different species of flowers, providing both enthusiasts and professionals with a powerful tool for flower identification. The model achieves remarkable accuracy through the use of transfer learning, utilizing pre-trained networks that have been fine-tuned for this specific task.</p>
+            </div>
+
+            <div class="image-gallery" data-aos="fade-up">
+                <div class="gallery-image">
+                    <img src="../images/Flowers.png" alt="Flower Species Classifier">
+                </div>
+                <div class="gallery-image">
+                    <img src="../images/Flowerss.PNG" alt="Flower Species Classification Results">
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Technologies Used</h2>
+                <div class="technologies">
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-tensorflow"></i>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Keras</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Jupyter Notebook</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>MobileNetV2</span>
+                    </div>
+                </div>
+                <p>The project primarily uses TensorFlow and Keras as the deep learning framework, with transfer learning based on MobileNetV2 architecture. This combination provides excellent performance while keeping the model size relatively small and inference times fast.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Key Features</h2>
+                <div class="key-features">
+                    <ul class="features-list">
+                        <li>Classification of 102 different flower species with high accuracy</li>
+                        <li>Efficient model architecture using MobileNetV2 for transfer learning</li>
+                        <li>Robust image preprocessing and data augmentation for better generalization</li>
+                        <li>Top-k predictions with confidence scores for each classification</li>
+                        <li>Optimized for both accuracy and inference speed</li>
+                        <li>Interactive command-line interface for ease of use</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Implementation Details</h2>
+                <h3>Data Preprocessing</h3>
+                <p>Images are resized to 224x224 pixels and normalized according to MobileNetV2 requirements. Data augmentation techniques such as random rotations, flips, zooms, and shifts were applied to increase the diversity of the training set and improve model generalization.</p>
+                
+                <h3>Model Architecture</h3>
+                <p>The classifier uses MobileNetV2 pre-trained on ImageNet as the base model. The base model's weights are frozen to preserve the feature extraction capabilities, and custom classification layers are added on top. These include a global average pooling layer, a dropout layer to prevent overfitting, and a dense output layer with softmax activation.</p>
+                
+                <h3>Training Process</h3>
+                <p>The model was trained using the Adam optimizer with a learning rate scheduler to ensure optimal convergence. The training process was monitored with validation accuracy, and early stopping was implemented to prevent overfitting. The best-performing model was saved for inference.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Results & Impact</h2>
+                <p>The final model achieves over 90% accuracy on the test dataset, demonstrating its effectiveness in distinguishing between various flower species. The classifier works well even with varied lighting conditions, angles, and partial occlusions.</p>
+                <p>This project has practical applications in botany, gardening, and educational contexts. It can help plant enthusiasts identify flowers they encounter, assist botanical researchers in cataloging species, and serve as an educational tool for learning about different flower varieties.</p>
+            </div>
+
+            <div class="project-section" data-aos="fade-up">
+                <h2 class="project-section-title">Challenges & Learning</h2>
+                <p>Some of the main challenges encountered during this project included:</p>
+                <ul>
+                    <li>Dealing with the imbalanced Oxford Flowers dataset</li>
+                    <li>Optimizing model architecture for both accuracy and inference speed</li>
+                    <li>Implementing effective data augmentation to prevent overfitting</li>
+                    <li>Creating an intuitive command-line interface for non-technical users</li>
+                </ul>
+                <p>These challenges provided valuable learning opportunities in transfer learning optimization, data preprocessing techniques, and creating user-friendly interfaces for machine learning applications.</p>
+            </div>
+
+            <div class="project-navigation">
+                <a href="dog-breed-classifier.html" class="nav-project prev">
+                    <span>Previous Project</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="employee-time-off.html" class="nav-project next">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 
