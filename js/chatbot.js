@@ -4,7 +4,7 @@
 
 class PortfolioChat {
     constructor() {
-        this.apiUrl = 'https://mydevapp.loca.lt';
+        this.apiUrl = 'https://8f31-52-5-52-241.ngrok-free.app/api/chat';
         this.chatHistory = [];
         this.isOpen = false;
         this.isLoading = false;
