@@ -4,7 +4,7 @@
 
 class PortfolioChat {
     constructor() {
-        this.apiUrl = 'http://52.5.52.241:4342/api/chat';
+        this.apiUrl = 'https://mydevapp.loca.lt';
         this.chatHistory = [];
         this.isOpen = false;
         this.isLoading = false;
