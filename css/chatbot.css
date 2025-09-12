@@ -377,6 +377,107 @@ body.dark-mode .contact-card:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Cold start message styling */
+.cold-start-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid var(--primary-color, #007bff);
+    border-radius: 12px;
+    margin: 5px 0;
+}
+
+.cold-start-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color, #007bff);
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.cold-start-text {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.cold-start-text strong {
+    color: var(--primary-color, #007bff);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cold-start-text span {
+    color: var(--text-light, #666);
+    font-size: 13px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Dark mode for cold start message */
+body.dark-mode .cold-start-content {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    border-left-color: var(--primary-color, #007bff);
+}
+
+body.dark-mode .cold-start-text strong {
+    color: var(--primary-color, #4da6ff);
+}
+
+body.dark-mode .cold-start-text span {
+    color: var(--dark-text-light, #a0aec0);
+}
+
+body.dark-mode .cold-start-icon {
+    color: var(--primary-color, #4da6ff);
+}
+
+/* Enhanced loading indicator with better animation */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color, #007bff);
+    display: inline-block;
+    animation: typing-pulse 1.4s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing-pulse {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .chat-box {
@@ -393,5 +494,18 @@ body.dark-mode .contact-card:hover {
     
     .chat-button i {
         font-size: 20px;
+    }
+    
+    .cold-start-content {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .cold-start-text strong {
+        font-size: 13px;
+    }
+    
+    .cold-start-text span {
+        font-size: 12px;
     }
 } 

@@ -49,11 +49,13 @@ The frontend consists of:
 
 ### 2. Update the API URL
 
-After deployment, update the `apiUrl` in `js/chatbot.js` with your Vercel deployment URL:
+After deployment, update the `apiUrl` in `js/chatbot.js` with your deployment URL:
 
 ```javascript
-this.apiUrl = 'https://your-vercel-deployment-url.vercel.app/api/chat';
+this.apiUrl = 'https://portfolio-chat-14rh.onrender.com/api/chat';
 ```
+
+**Note:** The current implementation uses Render.com's free tier, which may experience cold starts after periods of inactivity.
 
 ## Features
 
@@ -62,6 +64,9 @@ this.apiUrl = 'https://your-vercel-deployment-url.vercel.app/api/chat';
 - **Responsive Design**: Works on all device sizes
 - **Dark Mode Support**: Automatically adjusts to the site's theme
 - **Accessible from Contact Section**: Additional entry point in the contact section
+- **Cold Start Handling**: Elegant UX for handling server wake-up delays on free hosting
+- **Progressive Loading**: Smart loading states with informative messaging
+- **Timeout Management**: Graceful handling of slow responses with user-friendly messaging
 
 ## Customization
 
@@ -75,7 +80,15 @@ You can customize the chatbot by:
 
 - The OpenAI API key is stored securely as an environment variable
 - CORS headers are configured to restrict access to your domain
-- Rate limiting can be implemented on the Vercel function if needed
+- Rate limiting can be implemented on the server function if needed
+- Request timeouts prevent hanging connections
+
+## Performance & UX Considerations
+
+- **Cold Start Management**: When using free hosting services (like Render), the first request after inactivity may take 15-30 seconds
+- **Progressive Messaging**: Users are informed about potential delays in a professional manner
+- **Timeout Handling**: Requests timeout after 45 seconds with helpful error messages
+- **Visual Feedback**: Enhanced loading animations and status messages keep users engaged
 
 ## Future Enhancements
 
@@ -84,4 +97,4 @@ Potential improvements to consider:
 1. Adding a vector database for more sophisticated RAG capabilities
 2. Implementing conversation history storage
 3. Adding analytics to track common questions
-4. Enhancing the system prompt with more detailed information about projects 
+4. Enhancing the system prompt with more detailed information about projects

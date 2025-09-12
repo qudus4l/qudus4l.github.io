@@ -4,10 +4,12 @@
 
 class PortfolioChat {
     constructor() {
-        this.apiUrl = 'https://8f31-52-5-52-241.ngrok-free.app/api/chat';
+        this.apiUrl = 'https://portfolio-chat-14rh.onrender.com/api/chat';
         this.chatHistory = [];
         this.isOpen = false;
         this.isLoading = false;
+        this.coldStartTimer = null;
+        this.requestTimeout = null;
         
         this.initChatUI();
         this.bindEvents();
@@ -141,8 +143,21 @@ class PortfolioChat {
         this.isLoading = true;
         this.addLoadingIndicator();
         
+        // Set up cold start warning timer
+        this.coldStartTimer = setTimeout(() => {
+            this.showColdStartMessage();
+        }, 8000); // Show after 8 seconds
+        
+        // Set up request timeout
+        this.requestTimeout = setTimeout(() => {
+            this.handleTimeout();
+        }, 45000); // Timeout after 45 seconds
+        
         try {
             const response = await this.queryBot(query);
+            
+            // Clear timers
+            this.clearTimers();
             
             // Remove loading indicator
             this.removeLoadingIndicator();
@@ -151,15 +166,22 @@ class PortfolioChat {
             if (response.answer) {
                 this.addMessage(response.answer, 'bot');
             } else if (response.error) {
-                this.addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+                this.addMessage('I apologize, but I encountered an issue processing your request. Please try again in a moment.', 'bot');
                 console.error(response.error);
             }
         } catch (error) {
+            // Clear timers
+            this.clearTimers();
+            
             // Remove loading indicator
             this.removeLoadingIndicator();
             
-            // Add error message
-            this.addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+            // Add error message based on error type
+            if (error.name === 'TimeoutError') {
+                this.addMessage('The service is taking longer than expected to respond. This might be due to server maintenance. Please try again in a few moments.', 'bot');
+            } else {
+                this.addMessage('I apologize, but I encountered a technical issue. Please try again in a moment.', 'bot');
+            }
             console.error('Error querying bot:', error);
         }
         
@@ -167,19 +189,36 @@ class PortfolioChat {
     }
     
     async queryBot(query) {
-        const response = await fetch(this.apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ query })
-        });
+        // Create an AbortController for request timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 40000); // 40 second timeout
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        try {
+            const response = await fetch(this.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ query }),
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            
+            return await response.json();
+        } catch (error) {
+            clearTimeout(timeoutId);
+            if (error.name === 'AbortError') {
+                const timeoutError = new Error('Request timed out');
+                timeoutError.name = 'TimeoutError';
+                throw timeoutError;
+            }
+            throw error;
         }
-        
-        return await response.json();
     }
     
     addMessage(content, sender) {
@@ -219,6 +258,58 @@ class PortfolioChat {
         const loadingIndicator = document.querySelector('.loading');
         if (loadingIndicator) {
             loadingIndicator.remove();
+        }
+        
+        // Also remove cold start message if present
+        const coldStartMessage = document.querySelector('.cold-start-message');
+        if (coldStartMessage) {
+            coldStartMessage.remove();
+        }
+    }
+    
+    showColdStartMessage() {
+        // Remove existing cold start message if any
+        const existing = document.querySelector('.cold-start-message');
+        if (existing) existing.remove();
+        
+        const coldStartDiv = document.createElement('div');
+        coldStartDiv.className = 'bot-message cold-start-message';
+        coldStartDiv.innerHTML = `
+            <div class="message-content cold-start-content">
+                <div class="cold-start-icon">
+                    <i class="fas fa-coffee"></i>
+                </div>
+                <div class="cold-start-text">
+                    <strong>Just a moment...</strong><br>
+                    <span>The AI service is warming up. This may take up to 30 seconds on the first request due to server optimization.</span>
+                </div>
+            </div>
+        `;
+        
+        this.messagesContainer.appendChild(coldStartDiv);
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+    
+    handleTimeout() {
+        this.clearTimers();
+        this.removeLoadingIndicator();
+        
+        const timeoutMessage = `I apologize for the delay. The service appears to be experiencing high load or is in sleep mode. 
+        
+This can happen with free hosting services during periods of inactivity. Please try again in a few moments, and the response should be much faster.`;
+        
+        this.addMessage(timeoutMessage, 'bot');
+        this.isLoading = false;
+    }
+    
+    clearTimers() {
+        if (this.coldStartTimer) {
+            clearTimeout(this.coldStartTimer);
+            this.coldStartTimer = null;
+        }
+        if (this.requestTimeout) {
+            clearTimeout(this.requestTimeout);
+            this.requestTimeout = null;
         }
     }
 }
