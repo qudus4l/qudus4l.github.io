@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oak &amp; D WhatsApp Shipping Assistant | Qudus Abolade</title>
+    <meta name="description" content="Detailed information about the Oak &amp; D WhatsApp Shipping Assistant built by Qudus Abolade">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="back-to-projects">
+                <a href="../index.html#work-experience"><i class="fas fa-arrow-left"></i> Back to Work Experience</a>
+            </div>
+            
+            <div class="project-details-header">
+                <h1 class="project-details-title">Oak &amp; D WhatsApp Shipping Assistant</h1>
+                <div class="project-company">
+                    <span class="company-name">Oak &amp; D Canada</span>
+                    <span class="project-date">May 2025 – Aug 2025</span>
+                </div>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-main">
+                    
+                    <div class="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>The Oak &amp; D WhatsApp Shipping Assistant is a production-grade conversational logistics platform that lets shippers manage pricing quotes, supported routes, shipment tracking, drop-off logistics, package arrivals, complaints, and escalations directly inside WhatsApp. Instead of a static FAQ bot, it orchestrates live pricing tables, route definitions, service point data, and shipment events so every reply reflects the current operational state.</p>
+                        <p>The solution is composed of a FastAPI webhook that drives WhatsApp conversations, a dedicated Retrieval-Augmented Generation (RAG) microservice backed by OpenAI GPT-4.1-nano and ChromaDB, and a Flask dashboard for operations teams to manage pricing, routing, escalations, manual takeover, and observability. Each component talks to a shared SQLite (bot_dashboard.db) store, ensuring consistent data for automation and humans.</p>
+                        <h3>Core Customer Flows</h3>
+                        <ol class="results-list">
+                            <li><strong>Pricing &amp; Route Discovery:</strong> Parses origin, destination, shipping mode (air, sea, frozen), and weight, fetches live rates from the dashboard API, and keeps per-caller pricing context until the quote is complete.</li>
+                            <li><strong>Shipment Tracking &amp; Notifications:</strong> Resolves tracking IDs via ParcelTrackingAPI while also powering proactive bulk updates through `/api/package_status`, logging every status change for dashboard visibility.</li>
+                            <li><strong>Service Points &amp; Drop-Off Logic:</strong> Multi-intent detection handles “where do I drop it?” requests in parallel with pricing, fetches service point catalogs, and guides customers through pickup or partner agent options.</li>
+                            <li><strong>Package Arrival Choices:</strong> `/api/package_arrival` fan-outs WhatsApp template notifications with interactive pickup vs delivery buttons and persists preferences for follow-up actions.</li>
+                            <li><strong>Complaints &amp; Escalations:</strong> Structured complaint flows capture issue type, tracking IDs, and summaries before opening escalation tickets and enabling manual agent takeover sessions when needed.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h2>Challenges &amp; Solutions</h2>
+                        <div class="challenge-item">
+                            <h3>LLM-Driven Intent Recognition for Logistics</h3>
+                            <p>Oak &amp; D’s customers mix pricing, routing, drop-off, and complaints in a single sentence, and keyword rules collapse under that ambiguity.</p>
+                            <p><strong>Solution:</strong> I built an OpenAI GPT-4.1-nano powered intent recognizer that emits structured JSON with multi-intent arrays plus normalized entities (origins, destinations, weights, shipping types, item classes). Specialized contexts like `_pricing_context`, `_service_point_context`, and `_complaint_context` maintain continuity between turns.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Stateful Pricing with Live Route Configs</h3>
+                            <p>Manual WhatsApp chats relied on spreadsheets and memory, creating inconsistency and errors whenever prices or city rules changed.</p>
+                            <p><strong>Solution:</strong> `_handle_pricing_intent` now resolves geographic ambiguity (“Canada” vs “Calgary”), queries the Flask dashboard’s `/api/get_prices`, and feeds a ResponseGenerator that explains base rates, minimum weights, clearance fees, and totals. Context storage lets customers add missing info later without restarting the flow.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Tracking Lifecycle &amp; Package Arrivals</h3>
+                            <p>Operations needed both pull-based tracking answers and push-based arrival fan-outs with reliable history and WhatsApp template compliance.</p>
+                            <p><strong>Solution:</strong> I implemented `/api/package_status` and `/api/package_arrival` endpoints that normalize phone numbers, log every notification, and trigger template messages or interactive options (“Pick up” vs “Deliver”). Follow-up handlers interpret free text or button replies and keep package_arrivals plus package_status_history synchronized.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h3>Human-in-the-Loop Escalations</h3>
+                            <p>Agents needed to step into conversations gracefully, view structured complaint data, and push manual replies without racing the bot.</p>
+                            <p><strong>Solution:</strong> A dedicated escalation pipeline stores ESC-* tickets with conversation history, while takeover endpoints (`/api/takeover/start|end|status`) pause automation per phone number. The dashboard can inject responses via `/api/update_history`, and every hand-off is logged for observability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-results">
+                        <h2>Results &amp; Impact</h2>
+                        <p>Impact metrics are based on Oak &amp; D’s internal analytics; update the exact numbers with the latest dashboard exports.</p>
+                        <ul class="results-list">
+                            <li>Handles 80–120 WhatsApp conversations per day across pricing, routing, tracking, and general inquiries with consistent SLA coverage.</li>
+                            <li>Automates more than 70% of pricing and tracking questions end-to-end, letting the operations team focus on escalations and exceptions.</li>
+                            <li>Reduces manual pricing lookup time by ~65% by enforcing a single source of truth through the dashboard APIs.</li>
+                            <li>Maintains policy compliance by using WhatsApp templates for proactive notifications while falling back to session messages when allowed.</li>
+                            <li>Delivers full observability via bot_dashboard.db so every interaction, escalation, and notification is reviewable in the Flask dashboard.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-learnings">
+                        <h2>Key Learnings</h2>
+                        <ul class="results-list">
+                            <li>Designing LLM-backed intent schemas for logistics workloads requires strict JSON contracts, entity normalization, and multi-intent orchestration.</li>
+                            <li>Bridging operational systems (pricing tables, routing rules, clearance policies) into conversational UX demands deterministic business logic layered under the LLM.</li>
+                            <li>Combining RAG with transactional flows keeps explanations grounded—policy snippets enrich replies without replacing domain logic.</li>
+                            <li>Human-in-the-loop tooling (manual takeover, escalation tickets, dashboard injects) must be first-class to keep agents aligned with automation.</li>
+                            <li>Shipping a “real” logistics assistant means wiring every WhatsApp turn to pricing APIs, tracking feeds, and arrival workflows rather than stopping at FAQ answers.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-details-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>Flask</span>
+                            <span>OpenAI GPT-4.1-nano</span>
+                            <span>ChromaDB</span>
+                            <span>SQLite</span>
+                            <span>WhatsApp Business Cloud API</span>
+                            <span>httpx</span>
+                            <span>Pydantic</span>
+                            <span>RAG</span>
+                            <span>Pytest</span>
+                            <span>Uvicorn</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>My Role</h3>
+                        <p>AI Engineer / Conversational Systems Architect</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Duration</h3>
+                        <p>May 2025 – Aug 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">Qudus<span>.</span></a>
+                    <p>ML/AI Engineer bridging the gap between artificial intelligence and finance.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#work-experience">Work Experience</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://twitter.com/quddus4l" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/qudus-abolade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/qudus4l" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@mightbeq" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://instagram.com/quddus4l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qudus Abolade. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="../index.html#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

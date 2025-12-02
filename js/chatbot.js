@@ -76,14 +76,22 @@ class PortfolioChat {
         });
 
         // Add event listener for contact section chat button
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactChatButton = document.getElementById('contact-chat-button');
-            if (contactChatButton) {
-                contactChatButton.addEventListener('click', () => {
-                    this.toggleChat(true);
-                });
-            }
-        });
+        const contactChatButton = document.getElementById('contact-chat-button');
+        if (contactChatButton) {
+            contactChatButton.addEventListener('click', () => {
+                this.toggleChat(true);
+            });
+        } else {
+            // In case script loads before the contact section, observe DOM mutations once
+            const observer = new MutationObserver((mutations, obs) => {
+                const button = document.getElementById('contact-chat-button');
+                if (button) {
+                    button.addEventListener('click', () => this.toggleChat(true));
+                    obs.disconnect();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
     }
     
     toggleChat(forceOpen = false) {
