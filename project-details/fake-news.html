@@ -9,166 +9,15 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <style>
-        /* Project detail specific styles */
-        .project-hero {
-            min-height: 60vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Fake.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
-        
-        .project-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .project-tags span {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.875rem;
-        }
-        
-        .project-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .project-details {
-            padding: 3rem 0;
-        }
-        
-        .project-section {
-            margin-bottom: 3rem;
-        }
-        
-        .project-section-title {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .project-section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .gallery-image {
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-normal);
-        }
-        
-        .gallery-image:hover {
-            transform: translateY(-10px);
-        }
-        
-        .technologies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-item {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-            padding: 0.75rem 1.25rem;
-            border-radius: var(--border-radius-md);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .tech-item i {
-            font-size: 1.25rem;
-        }
-        
-        .key-features {
-            background-color: var(--bg-light);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .features-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-        
-        .features-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .project-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .nav-project {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-project.prev {
-            flex-direction: row-reverse;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Qudus<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -177,17 +26,15 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
     <!-- Project Hero -->
-    <section class="project-hero">
+    <section class="project-hero" style="--hero-bg: url('../images/Fake.png')">
         <div class="container">
             <h1 class="project-title" data-aos="fade-up">Fake News Detection</h1>
             <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
@@ -212,7 +59,7 @@
         <div class="container">
             <div class="project-section" data-aos="fade-up">
                 <h2 class="project-section-title">Project Overview</h2>
-                <p>The Fake News Detection system is an advanced natural language processing (NLP) application designed to identify potentially misleading or false news articles automatically. In an era where misinformation can spread rapidly online, this tool offers a critical layer of verification to help users discern credible information from dubious content.</p>
+                <p>The Fake News Detection system is a natural language processing (NLP) application designed to identify potentially misleading or false news articles automatically. In an era where misinformation can spread rapidly online, this tool offers a critical layer of verification to help users discern credible information from dubious content.</p>
                 <p>The system analyzes linguistic patterns, contextual cues, and statistical features in news articles to determine their credibility. By leveraging machine learning algorithms and NLP techniques, it can classify articles as potentially reliable or unreliable with high accuracy.</p>
             </div>
 
@@ -254,7 +101,7 @@
                 <div class="key-features">
                     <ul class="features-list">
                         <li>Binary classification of news articles as reliable or potentially misleading</li>
-                        <li>Advanced text preprocessing with tokenization, stemming, and stop-word removal</li>
+                        <li>Text preprocessing with tokenization, stemming, and stop-word removal</li>
                         <li>Feature extraction using TF-IDF vectorization</li>
                         <li>Multiple classifier options (Passive Aggressive Classifier, Random Forest, etc.)</li>
                         <li>Evaluation metrics including accuracy, precision, recall, and F1-score</li>
@@ -266,7 +113,7 @@
             <div class="project-section" data-aos="fade-up">
                 <h2 class="project-section-title">Implementation Details</h2>
                 <h3>Data Processing</h3>
-                <p>The system employs sophisticated text preprocessing techniques to clean and normalize text data. This includes tokenization to break text into individual words, stemming to reduce words to their root form, and removal of stop words (common words like "the" or "and" that don't carry significant meaning). These steps ensure that the machine learning model focuses on meaningful content when making predictions.</p>
+                <p>The system employs text preprocessing techniques to clean and normalize text data. This includes tokenization to break text into individual words, stemming to reduce words to their root form, and removal of stop words (common words like "the" or "and" that don't carry significant meaning). These steps ensure that the machine learning model focuses on meaningful content when making predictions.</p>
                 
                 <h3>Feature Engineering</h3>
                 <p>To transform text data into a format suitable for machine learning algorithms, the system uses Term Frequency-Inverse Document Frequency (TF-IDF) vectorization. This technique assigns weights to words based on their frequency in the document and rarity across the corpus. Additionally, the system extracts linguistic features like punctuation patterns, word count metrics, and sentiment scores that help identify potential misinformation.</p>
@@ -286,7 +133,7 @@
                 <p>Some of the main challenges encountered during this project included:</p>
                 <ul>
                     <li>Dealing with the subjective nature of what constitutes "fake news"</li>
-                    <li>Handling sophisticated misinformation that closely mimics legitimate reporting</li>
+                    <li>Handling misinformation that closely mimics legitimate reporting</li>
                     <li>Building a model that generalizes well across different topics and writing styles</li>
                     <li>Balancing precision and recall metrics to minimize both false positives and false negatives</li>
                 </ul>

@@ -4,171 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThesisPen AI | Qudus Abolade</title>
-    <meta name="description" content="ThesisPen AI is an advanced tool for thesis writing and academic text generation, leveraging natural language processing to assist researchers and students.">
+    <meta name="description" content="ThesisPen AI is a tool for thesis writing and academic text generation, leveraging natural language processing to assist researchers and students.">
     <link rel="icon" href="../images/logo.png" type="image/png">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <style>
-        /* Project detail specific styles */
-        .project-hero {
-            min-height: 60vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/image.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
-        
-        .project-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .project-tags span {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.875rem;
-        }
-        
-        .project-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .project-details {
-            padding: 3rem 0;
-        }
-        
-        .project-section {
-            margin-bottom: 3rem;
-        }
-        
-        .project-section-title {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .project-section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .gallery-image {
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-normal);
-        }
-        
-        .gallery-image:hover {
-            transform: translateY(-10px);
-        }
-        
-        .technologies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-item {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-            padding: 0.75rem 1.25rem;
-            border-radius: var(--border-radius-md);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .tech-item i {
-            font-size: 1.25rem;
-        }
-        
-        .key-features {
-            background-color: var(--bg-light);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .features-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-        
-        .features-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .project-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .nav-project {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-project.prev {
-            flex-direction: row-reverse;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Qudus<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+    <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -177,17 +27,15 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
     <!-- Project Hero -->
-    <section class="project-hero">
+    <section class="project-hero" style="--hero-bg: url('../images/image.png')">
         <div class="container">
             <h1 class="project-title" data-aos="fade-up">ThesisPen AI</h1>
             <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
@@ -213,8 +61,8 @@
         <div class="container">
             <div class="project-section" data-aos="fade-up">
                 <h2 class="project-section-title">Project Overview</h2>
-                <p>The ThesisPen system is an advanced natural language processing (NLP) application designed to automatically generate comprehensive thesis papers on any academic topic. In an era where students and researchers face significant time constraints, this tool offers a critical solution to help jumpstart the thesis writing process by providing well-structured, content-rich documents that can be further refined.</p>
-                <p>The system analyzes user inputs about a project topic and description, then leverages large language models to generate structured academic content including a table of contents, abstract, and full thesis chapters. By leveraging sophisticated AI models and NLP techniques, it can produce coherent, well-researched academic documents with proper citations and references.</p>
+                <p>The ThesisPen system is a natural language processing (NLP) application designed to automatically generate comprehensive thesis papers on any academic topic. In an era where students and researchers face significant time constraints, this tool offers a critical solution to help jumpstart the thesis writing process by providing well-structured, content-rich documents that can be further refined.</p>
+                <p>The system analyzes user inputs about a project topic and description, then leverages large language models to generate structured academic content including a table of contents, abstract, and full thesis chapters. By leveraging AI models and NLP techniques, it can produce coherent, well-researched academic documents with proper citations and references.</p>
             </div>
 
             <div class="project-section" data-aos="fade-up">
@@ -270,10 +118,10 @@
             <div class="project-section" data-aos="fade-up">
                 <h2 class="project-section-title">Implementation Details</h2>
                 <h3>Data Processing</h3>
-                <p>The system employs sophisticated text processing techniques to gather and analyze research materials. It connects to the ArXiv API to retrieve relevant academic papers based on the thesis topic, then processes these papers using NLP techniques to extract key information, including abstracts, authors, and publication dates. The system ranks these papers by semantic similarity to the thesis topic using TF-IDF vectorization and cosine similarity metrics to ensure only the most relevant sources are incorporated.</p>
+                <p>The system employs text processing techniques to gather and analyze research materials. It connects to the ArXiv API to retrieve relevant academic papers based on the thesis topic, then processes these papers using NLP techniques to extract key information, including abstracts, authors, and publication dates. The system ranks these papers by semantic similarity to the thesis topic using TF-IDF vectorization and cosine similarity metrics to ensure only the most relevant sources are incorporated.</p>
                 
                 <h3>Content Generation</h3>
-                <p>To transform user inputs into comprehensive thesis documents, the system utilizes carefully crafted prompt templates that guide language models in generating academically appropriate content. Each section of the thesis has specialized templates that ensure consistency in tone, style, and academic rigor throughout the document. The system intelligently incorporates citations from retrieved academic papers to support the generated content.</p>
+                <p>To transform user inputs into comprehensive thesis documents, the system utilizes carefully crafted prompt templates that guide language models in generating academically appropriate content. Each section of the thesis has specialized templates that ensure consistency in tone, style, and academic rigor throughout the document. The system incorporates citations from retrieved academic papers to support the generated content.</p>
                 
                 <h3>Parallel Processing & Document Assembly</h3>
                 <p>For efficiency, the system implements multi-threading to generate different thesis sections simultaneously. This parallel approach significantly reduces overall generation time. The final content is assembled into a properly formatted academic document using the Python-docx library, maintaining consistent formatting, proper citation styles, and a coherent structure throughout.</p>
@@ -298,8 +146,8 @@
                     <li>Reduces thesis planning and drafting time by up to 70%, allowing researchers to focus on refinement</li>
                     <li>Produces content that follows academic writing standards with proper structure and formatting</li>
                     <li>Integrates relevant citations from academic sources to support generated content</li>
-                    <li>Provides a powerful starting point that can be further customized and expanded</li>
-                    <li>Allows academic writers to focus more on original research rather than basic content development</li>
+                    <li>Provides a starting point that can be further customized and expanded</li>
+                    <li>Implementation of plagiarism detection and factual verification</li>
                 </ul>
             </div>
 
@@ -309,7 +157,7 @@
                     <li>Integration with reference management systems like Zotero and Mendeley</li>
                     <li>Enhanced semantic analysis for more precise research paper relevance ranking</li>
                     <li>Development of discipline-specific templates for specialized academic fields</li>
-                    <li>Implementation of advanced plagiarism detection and factual verification</li>
+                    <li>Implementation of plagiarism detection and factual verification</li>
                     <li>Addition of collaborative editing features for research teams</li>
                     <li>Support for multiple citation styles (MLA, Chicago, IEEE) beyond APA</li>
                 </ul>
@@ -382,35 +230,8 @@
             document.querySelector('.nav-menu').classList.toggle('active');
         });
 
-        // Dark mode toggle
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        const body = document.body;
-
-        // Check for saved theme preference or use preferred color scheme
-        const currentTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        // Set initial theme
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-        }
-
-        // Toggle theme
-        darkModeToggle.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            let theme = 'light';
-            let icon = 'fa-moon';
-            
-            if (body.classList.contains('dark-mode')) {
-                theme = 'dark';
-                icon = 'fa-sun';
-            }
-            
-            localStorage.setItem('theme', theme);
-            this.querySelector('i').className = `fas ${icon}`;
-        });
+        
+    </script>
     </script>
 </body>
 </html> 

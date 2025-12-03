@@ -9,166 +9,15 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <style>
-        /* Project detail specific styles */
-        .project-hero {
-            min-height: 60vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/dogs.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
-        
-        .project-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .project-tags span {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.875rem;
-        }
-        
-        .project-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .project-details {
-            padding: 3rem 0;
-        }
-        
-        .project-section {
-            margin-bottom: 3rem;
-        }
-        
-        .project-section-title {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .project-section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .gallery-image {
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-normal);
-        }
-        
-        .gallery-image:hover {
-            transform: translateY(-10px);
-        }
-        
-        .technologies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-item {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-            padding: 0.75rem 1.25rem;
-            border-radius: var(--border-radius-md);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .tech-item i {
-            font-size: 1.25rem;
-        }
-        
-        .key-features {
-            background-color: var(--bg-light);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .features-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-        
-        .features-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .project-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .nav-project {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-project.prev {
-            flex-direction: row-reverse;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Qudus<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Q<span>.</span></a>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -177,17 +26,15 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
     <!-- Project Hero -->
-    <section class="project-hero">
+    <section class="project-hero" style="--hero-bg: url('../images/dogs.png')">
         <div class="container">
             <h1 class="project-title" data-aos="fade-up">Dog Breed Classifier</h1>
             <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
@@ -246,7 +93,7 @@
                         <span>OpenCV</span>
                     </div>
                 </div>
-                <p>The project primarily uses PyTorch as the deep learning framework, leveraging its powerful capabilities for building and training neural networks. The model architecture includes pre-trained networks like VGG, Alexnet, and DenseNet for transfer learning.</p>
+                <p>The project primarily uses PyTorch as the deep learning framework, leveraging its capabilities for building and training neural networks. The model architecture includes pre-trained networks like VGG, Alexnet, and DenseNet for transfer learning.</p>
             </div>
 
             <div class="project-section" data-aos="fade-up">
@@ -278,7 +125,7 @@
             <div class="project-section" data-aos="fade-up">
                 <h2 class="project-section-title">Results & Impact</h2>
                 <p>The final model achieves over 85% accuracy on the test dataset, demonstrating its effectiveness in distinguishing between various dog breeds. The classifier works well even with challenging images where the dog may be partially obscured or in unusual poses.</p>
-                <p>The project showcases practical applications of deep learning in image classification tasks and provides a foundation for more advanced computer vision projects.</p>
+                <p>The project showcases practical applications of deep learning in image classification tasks and provides a foundation for more computer vision projects.</p>
             </div>
 
             <div class="project-section" data-aos="fade-up">

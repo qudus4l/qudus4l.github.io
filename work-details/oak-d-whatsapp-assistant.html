@@ -12,10 +12,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
             <a href="../index.html" class="logo">Q<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -24,13 +25,10 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
@@ -54,14 +52,14 @@
                     
                     <div class="project-overview">
                         <h2>Project Overview</h2>
-                        <p>The Oak &amp; D WhatsApp Shipping Assistant is a production-grade conversational logistics platform that lets shippers manage pricing quotes, supported routes, shipment tracking, drop-off logistics, package arrivals, complaints, and escalations directly inside WhatsApp. Instead of a static FAQ bot, it orchestrates live pricing tables, route definitions, service point data, and shipment events so every reply reflects the current operational state.</p>
-                        <p>The solution is composed of a FastAPI webhook that drives WhatsApp conversations, a dedicated Retrieval-Augmented Generation (RAG) microservice backed by OpenAI GPT-4.1-nano and ChromaDB, and a Flask dashboard for operations teams to manage pricing, routing, escalations, manual takeover, and observability. Each component talks to a shared SQLite (bot_dashboard.db) store, ensuring consistent data for automation and humans.</p>
+                        <p>The Oak &amp; D WhatsApp Shipping Assistant is a conversational logistics platform that lets shippers manage pricing quotes, supported routes, shipment tracking, drop-off logistics, package arrivals, complaints, and escalations directly inside WhatsApp. Instead of a static FAQ bot, it orchestrates live pricing tables, route definitions, service point data, and shipment events so every reply reflects the current operational state.</p>
+                        <p>The solution is composed of a real-time messaging engine that drives WhatsApp conversations, an AI Knowledge Base backed by Language Models and a Vector Database, and an Operations Dashboard for teams to manage pricing, routing, escalations, manual takeover, and observability. Each component talks to a centralized database, ensuring consistent data for automation and humans.</p>
                         <h3>Core Customer Flows</h3>
                         <ol class="results-list">
                             <li><strong>Pricing &amp; Route Discovery:</strong> Parses origin, destination, shipping mode (air, sea, frozen), and weight, fetches live rates from the dashboard API, and keeps per-caller pricing context until the quote is complete.</li>
-                            <li><strong>Shipment Tracking &amp; Notifications:</strong> Resolves tracking IDs via ParcelTrackingAPI while also powering proactive bulk updates through `/api/package_status`, logging every status change for dashboard visibility.</li>
+                            <li><strong>Shipment Tracking &amp; Notifications:</strong> Resolves tracking IDs via ParcelTrackingAPI while also powering proactive bulk updates through automated status systems, logging every status change for dashboard visibility.</li>
                             <li><strong>Service Points &amp; Drop-Off Logic:</strong> Multi-intent detection handles “where do I drop it?” requests in parallel with pricing, fetches service point catalogs, and guides customers through pickup or partner agent options.</li>
-                            <li><strong>Package Arrival Choices:</strong> `/api/package_arrival` fan-outs WhatsApp template notifications with interactive pickup vs delivery buttons and persists preferences for follow-up actions.</li>
+                            <li><strong>Package Arrival Choices:</strong> Arrival notification systems fan-out WhatsApp template notifications with interactive pickup vs delivery buttons and persists preferences for follow-up actions.</li>
                             <li><strong>Complaints &amp; Escalations:</strong> Structured complaint flows capture issue type, tracking IDs, and summaries before opening escalation tickets and enabling manual agent takeover sessions when needed.</li>
                         </ol>
                     </div>
@@ -71,22 +69,22 @@
                         <div class="challenge-item">
                             <h3>LLM-Driven Intent Recognition for Logistics</h3>
                             <p>Oak &amp; D’s customers mix pricing, routing, drop-off, and complaints in a single sentence, and keyword rules collapse under that ambiguity.</p>
-                            <p><strong>Solution:</strong> I built an OpenAI GPT-4.1-nano powered intent recognizer that emits structured JSON with multi-intent arrays plus normalized entities (origins, destinations, weights, shipping types, item classes). Specialized contexts like `_pricing_context`, `_service_point_context`, and `_complaint_context` maintain continuity between turns.</p>
+                            <p><strong>Solution:</strong> I built an intent recognizer that emits structured data with multi-intent arrays plus normalized entities (origins, destinations, weights, shipping types, item classes). Context-aware sessions maintain continuity between turns.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Stateful Pricing with Live Route Configs</h3>
                             <p>Manual WhatsApp chats relied on spreadsheets and memory, creating inconsistency and errors whenever prices or city rules changed.</p>
-                            <p><strong>Solution:</strong> `_handle_pricing_intent` now resolves geographic ambiguity (“Canada” vs “Calgary”), queries the Flask dashboard’s `/api/get_prices`, and feeds a ResponseGenerator that explains base rates, minimum weights, clearance fees, and totals. Context storage lets customers add missing info later without restarting the flow.</p>
+                            <p><strong>Solution:</strong> The Pricing Engine now resolves geographic ambiguity (“Canada” vs “Calgary”), queries live pricing data, and feeds a Response System that explains base rates, minimum weights, clearance fees, and totals. Context storage lets customers add missing info later without restarting the flow.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Tracking Lifecycle &amp; Package Arrivals</h3>
                             <p>Operations needed both pull-based tracking answers and push-based arrival fan-outs with reliable history and WhatsApp template compliance.</p>
-                            <p><strong>Solution:</strong> I implemented `/api/package_status` and `/api/package_arrival` endpoints that normalize phone numbers, log every notification, and trigger template messages or interactive options (“Pick up” vs “Deliver”). Follow-up handlers interpret free text or button replies and keep package_arrivals plus package_status_history synchronized.</p>
+                            <p><strong>Solution:</strong> I implemented automated status and arrival endpoints that normalize phone numbers, log every notification, and trigger template messages or interactive options (“Pick up” vs “Deliver”). Follow-up handlers interpret free text or button replies and keep package arrivals synchronized with history.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Human-in-the-Loop Escalations</h3>
                             <p>Agents needed to step into conversations gracefully, view structured complaint data, and push manual replies without racing the bot.</p>
-                            <p><strong>Solution:</strong> A dedicated escalation pipeline stores ESC-* tickets with conversation history, while takeover endpoints (`/api/takeover/start|end|status`) pause automation per phone number. The dashboard can inject responses via `/api/update_history`, and every hand-off is logged for observability.</p>
+                            <p><strong>Solution:</strong> A dedicated escalation pipeline stores tickets with conversation history, while agent takeover tools pause automation per phone number. The dashboard can inject responses via history injection, and every hand-off is logged for observability.</p>
                         </div>
                     </div>
                     
@@ -98,7 +96,7 @@
                             <li>Automates more than 70% of pricing and tracking questions end-to-end, letting the operations team focus on escalations and exceptions.</li>
                             <li>Reduces manual pricing lookup time by ~65% by enforcing a single source of truth through the dashboard APIs.</li>
                             <li>Maintains policy compliance by using WhatsApp templates for proactive notifications while falling back to session messages when allowed.</li>
-                            <li>Delivers full observability via bot_dashboard.db so every interaction, escalation, and notification is reviewable in the Flask dashboard.</li>
+                            <li>Delivers full observability via the centralized database so every interaction, escalation, and notification is reviewable in the Operations Dashboard.</li>
                         </ul>
                     </div>
                     

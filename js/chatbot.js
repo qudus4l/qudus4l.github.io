@@ -22,7 +22,11 @@ class PortfolioChat {
         chatContainer.className = 'chat-container';
         chatContainer.innerHTML = `
             <div class="chat-button">
-                <i class="fas fa-robot"></i>
+                <div class="bot-orb">
+                    <div class="bot-core"></div>
+                    <div class="bot-ring"></div>
+                    <div class="bot-scanner"></div>
+                </div>
                 <span class="chat-tooltip">Ask me about Qudus!</span>
             </div>
             <div class="chat-box">

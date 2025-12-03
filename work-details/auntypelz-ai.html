@@ -12,10 +12,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
             <a href="../index.html" class="logo">Q<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -24,13 +25,10 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
@@ -57,7 +55,7 @@
                     
                     <div class="project-overview">
                         <h2>Project Overview</h2>
-                        <p>The HR FAQ Chatbot, internally known as AuntyPelz AI, is an intelligent assistant developed to streamline Human Resources operations at Curacel. It leverages a Retrieval-Augmented Generation (RAG) system to provide employees with instant, accurate answers to HR-related questions, process leave day and HMO ID inquiries, and deliver Slack engagement analytics. The system integrates with Google Drive for document-based knowledge and Google Sheets for dynamic employee and analytics data, utilizing OpenAI's language models for natural language understanding and response generation.</p>
+                        <p>The HR FAQ Chatbot, internally known as AuntyPelz AI, is an assistant developed to streamline Human Resources operations at Curacel. It leverages an AI Knowledge Retrieval system to provide employees with answers to HR-related questions, process leave day and HMO ID inquiries, and deliver Slack engagement analytics. The system integrates with Google Drive for document-based knowledge and Google Sheets for dynamic employee and analytics data, utilizing Language Models for natural language understanding and response generation.</p>
                         <p>As the sole developer on this project, I designed and implemented an AI-powered solution that enhances employee experience by providing a centralized, accessible, and efficient channel for HR information and services. The goal was to reduce the manual workload on the People Operations team and empower employees with self-service capabilities.</p>
                     </div>
                     
@@ -66,12 +64,12 @@
                         <div class="challenge-item">
                             <h3>Integrating Diverse and Dynamic Data Sources</h3>
                             <p>The chatbot needed to access information from various sources including HR policy documents (PDFs on Google Drive), structured employee leave/HMO data (Google Sheets), and Slack analytics reports (Google Sheets). Ensuring data freshness and consistent retrieval was crucial.</p>
-                            <p><strong>Solution:</strong> I implemented a robust document loading and processing pipeline that converts these varied data types into a unified format suitable for a vector store (Chroma). This involved creating parsers for Google Drive files and Google Sheets, and a mechanism to periodically refresh the vector store to ensure the chatbot always has access to the latest information.</p>
+                            <p><strong>Solution:</strong> I implemented a document loading and processing pipeline that converts these varied data types into a unified format suitable for a Vector Database. This involved creating parsers for Google Drive files and Google Sheets, and a mechanism to periodically refresh the knowledge base to ensure the chatbot always has access to the latest information.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Ensuring Contextual Understanding and Accurate Responses</h3>
                             <p>Providing relevant answers required the chatbot to understand the context of the conversation, including past interactions, and to accurately interpret different types of HR queries (e.g., policy questions, data lookups for leave, specific Slack analytics).</p>
-                            <p><strong>Solution:</strong> I worked on the design and implementation of the RAG chain using LangChain. This included setting up history-aware retrievers to maintain conversational context, and crafting detailed system prompts that guide the LLM in how to handle different query types, utilize the retrieved context, and adhere to specific communication protocols (e.g., for leave balance, HMO ID, Slack analytics reporting).</p>
+                            <p><strong>Solution:</strong> I worked on the design and implementation of the AI Knowledge Retrieval chain using an AI Orchestration Framework. This included setting up history-aware retrievers to maintain conversational context, and crafting detailed system prompts that guide the LLM in how to handle different query types, utilize the retrieved context, and adhere to specific communication protocols (e.g., for leave balance, HMO ID, Slack analytics reporting).</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Handling Specialized Queries and Data Presentation</h3>
@@ -110,14 +108,13 @@
                         <h3>Technologies Used</h3>
                         <div class="tech-tags">
                             <span>Python</span>
-                            <span>OpenAI GPT</span>
-                            <span>LangChain</span>
-                            <span>RAG</span>
-                            <span>ChromaDB</span>
-                            <span>FastAPI</span>
-                            <span>Google Drive API</span>
-                            <span>Google Sheets API</span>
-                            <span>Slack API</span>
+                            <span>Language Models</span>
+                            <span>AI Orchestration</span>
+                            <span>Knowledge Retrieval</span>
+                            <span>Vector Database</span>
+                            <span>Backend API</span>
+                            <span>Google Workspace Integrations</span>
+                            <span>Slack Integration</span>
                         </div>
                     </div>
                     

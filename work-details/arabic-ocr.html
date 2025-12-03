@@ -12,10 +12,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="nav-container">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
             <a href="../index.html" class="logo">Q<span>.</span></a>
-            <div class="nav-toggle" id="navToggle">
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -24,13 +25,10 @@
                 <li><a href="../index.html#home" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="../index.html#work-experience" class="nav-link active">Work Experience</a></li>
+                <li><a href="../index.html#work-experience" class="nav-link active">Experience</a></li>
                 <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
 
@@ -54,7 +52,7 @@
                     
                     <div class="project-overview">
                         <h2>Project Overview</h2>
-                        <p>The Arabic OCR Vision System is an advanced optical character recognition solution specifically engineered to accurately transcribe Arabic text from both handwritten and printed documents. The system leverages state-of-the-art vision-language models to overcome the unique challenges of Arabic script recognition, including its cursive nature, contextual character shapes, and diacritical marks.</p>
+                        <p>The Arabic OCR Vision System is an optical character recognition solution specifically engineered to transcribe Arabic text from both handwritten and printed documents. The system leverages vision-language models to overcome the unique challenges of Arabic script recognition, including its cursive nature, contextual character shapes, and diacritical marks.</p>
                         <p>As the sole developer of this project, I created a complete pipeline from data preparation to model deployment, focusing on accuracy and robustness for real-world applications. The system serves as a critical tool for digitizing Arabic documents, enabling searchable archives, and automating text extraction for various industries including healthcare, legal, and administrative sectors.</p>
                     </div>
                     
@@ -63,17 +61,17 @@
                         <div class="challenge-item">
                             <h3>Handling Arabic Script Complexity</h3>
                             <p>Arabic script presents unique challenges for OCR systems due to its right-to-left orientation, contextual character shapes, and connected writing style.</p>
-                            <p><strong>Solution:</strong> I implemented a specialized data augmentation pipeline using advanced image transformations that preserved the integrity of Arabic characters while enhancing model generalization. This included careful application of rotations, shears, and contrast adjustments that maintained text readability while simulating real-world document variations.</p>
+                            <p><strong>Solution:</strong> I implemented a data augmentation pipeline using image transformations that preserved the integrity of Arabic characters while enhancing model generalization. This included careful application of rotations, shears, and contrast adjustments that maintained text readability while simulating real-world document variations.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Model Selection and Fine-tuning</h3>
                             <p>Finding an appropriate base model capable of understanding the nuances of Arabic script required extensive research and experimentation.</p>
-                            <p><strong>Solution:</strong> I experimented with several convolutional neural network (CNN) architectures and also fine-tuned GPT models for OCR tasks. After thorough evaluation, I selected PaliGemma, a powerful vision-language model, and developed a custom fine-tuning approach that balanced computational efficiency with performance. By creating a comprehensive training dataset with paired image-text samples, I was able to achieve high transcription accuracy across diverse document types, including handwritten medical records with technical terminology.</p>
+                            <p><strong>Solution:</strong> I experimented with several deep learning architectures and also fine-tuned GPT models for OCR tasks. After thorough evaluation, I selected Vision-Language Models and developed a custom fine-tuning approach that balanced computational efficiency with performance. By creating a comprehensive training dataset with paired image-text samples, I was able to achieve high transcription accuracy across diverse document types, including handwritten medical records with technical terminology.</p>
                         </div>
                         <div class="challenge-item">
                             <h3>Deployment and Accessibility</h3>
                             <p>Creating a system accessible to end-users without specialized technical knowledge was crucial.</p>
-                            <p><strong>Solution:</strong> I developed a RESTful API with FastAPI that allows for easy integration with existing document management systems. The implementation includes robust error handling, image preprocessing to handle various input qualities, and optimized inference for responsive performance.</p>
+                            <p><strong>Solution:</strong> I developed a RESTful API with a Backend that allows for easy integration with existing document management systems. The implementation includes robust error handling, image preprocessing to handle various input qualities, and optimized inference for responsive performance.</p>
                         </div>
                     </div>
                     
@@ -108,14 +106,14 @@
                     <div class="sidebar-section">
                         <h3>Technologies Used</h3>
                         <div class="tech-tags">
-                            <span>PaliGemma</span>
+                            <span>Vision-Language Models</span>
                             <span>GPT</span>
-                            <span>CNN</span>
+                            <span>Deep Learning</span>
                             <span>Python</span>
                             <span>Computer Vision</span>
                             <span>OCR</span>
-                            <span>FastAPI</span>
-                            <span>PyTorch</span>
+                            <span>Scalable API</span>
+                            <span>ML Frameworks</span>
                             <span>Arabic NLP</span>
                             <span>Data Augmentation</span>
                             <span>REST API</span>
