@@ -1,25 +1,9 @@
-## Technologies Used
+# Qudus Abolade — portfolio
 
-- HTML5
-- CSS3 (with custom variables and modern features)
-- JavaScript (ES6+)
-- [Font Awesome](https://fontawesome.com/) - Icons
-- [AOS Library](https://michalsnik.github.io/aos/) - Animate On Scroll
+[Explore the portfolio](https://qudus4l.github.io/)
 
-## Browser Compatibility
+Full-Stack AI Engineer. Applied AI, product systems, and computer vision, explained through interactive engineering cases.
 
-This website is optimized for modern browsers including:
-- Chrome (Latest)
-- Firefox (Latest)
-- Safari (Latest)
-- Edge (Latest)
+This repository contains the static production export served by GitHub Pages from the root of `main`. The portfolio is built with React, Vinext, and Three.js. `.nojekyll` preserves the compiled assets under `_next`.
 
-## Credits
-
-- [Font Awesome](https://fontawesome.com/) - Icons used throughout the site
-- [AOS Library](https://michalsnik.github.io/aos/) - Animation library
-- [Google Fonts](https://fonts.google.com/) - Poppins font family
-
-## License
-
-This project is available for personal use. For commercial usage, please contact the original creator.
+The previous portfolio is retained in Git history at `620a4af36b27e0d898e7745f3066329c05e9715d`.

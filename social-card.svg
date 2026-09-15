@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101214"/>
+  <path d="M64 110H1136M64 530H1136" stroke="#343a3f"/>
+  <text x="64" y="70" fill="#eff1f3" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="600" letter-spacing="-1">Qudus Abolade.</text>
+  <text x="1136" y="69" text-anchor="end" fill="#abb4bc" font-family="Helvetica,Arial,sans-serif" font-size="22">Full-Stack AI Engineer</text>
+  <text x="60" y="258" fill="#eff1f3" font-family="Helvetica,Arial,sans-serif" font-size="100" font-weight="500" letter-spacing="-5">AI, past</text>
+  <text x="60" y="363" fill="#d9e88c" font-family="Helvetica,Arial,sans-serif" font-size="100" font-weight="500" letter-spacing="-5">the demo.</text>
+  <text x="65" y="443" fill="#abb4bc" font-family="Helvetica,Arial,sans-serif" font-size="27">Models. APIs. Interfaces.</text>
+  <g fill="none" stroke="#78838c" stroke-width="2">
+    <path d="M795 197L1072 278L940 459L748 348Z"/>
+    <path d="M795 197L908 320L1072 278M908 320L940 459M908 320L748 348"/>
+    <path d="M824 226L1034 288L936 425L780 340Z" stroke="#343e46"/>
+  </g>
+  <g fill="#101214" stroke="#d9e88c" stroke-width="2">
+    <circle cx="795" cy="197" r="8"/><circle cx="1072" cy="278" r="8"/><circle cx="940" cy="459" r="8"/>
+  </g>
+  <text x="64" y="577" fill="#c4cbd1" font-family="Helvetica,Arial,sans-serif" font-size="19">Oyster · CalAssist · Computer vision</text>
+  <text x="1136" y="577" text-anchor="end" fill="#abb4bc" font-family="Helvetica,Arial,sans-serif" font-size="19">qudus4l.github.io</text>
+</svg>

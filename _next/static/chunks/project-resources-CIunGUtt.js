@@ -1,0 +1,1 @@
+var e={oyster:{label:`Visit Oyster`,href:`https://oysterskin.com/`},calassist:{label:`Visit CalAssist`,href:`https://calassist.ai/`},styleTransfer:{label:`View code on GitHub`,href:`https://github.com/qudus4l/Style-Transfer`}};export{e as t};
